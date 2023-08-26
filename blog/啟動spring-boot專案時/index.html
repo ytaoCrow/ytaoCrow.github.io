@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>不想加班的工程師 JustinShen</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SLF4J: Class path contains multiple SLF4J bindings. 問題原因在於專案引用了兩個日誌框架，例如上面訊息說找到兩個slf4j......">
+  <meta name="author" content="JustinShen">
+    
+  
+  <meta name="theme-name" content="liva-hugo" />
+  
+  <meta name="generator" content="Hugo 0.116.1">
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://ytaoCrow.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://ytaoCrow.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://ytaoCrow.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://ytaoCrow.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://ytaoCrow.github.io/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://ytaoCrow.github.io/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://ytaoCrow.github.io/images/favicon.png " type="image/x-icon">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T528773ENW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T528773ENW');
+</script>
+
+</head>
+<body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom">
+      <a class="navbar-brand" href="https://ytaoCrow.github.io">
+        <span class="text-body">不想加班的工程師 JustinShen</span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu h3"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://ytaoCrow.github.io"> Home </a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://ytaoCrow.github.io/about/">About</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search p-3">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://ytaoCrow.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        
+        <a href="/categories/springboot"
+          class="text-primary">Spring boot</a>
+        
+        <h2>啟動Spring Boot專案時，出現錯誤SLF4J: Class path contains multiple SLF4J bindings.</h2>
+        <div class="mb-3 post-meta">
+          <span>By JustinShen</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>26 August 2023</span>
+          
+        </div>
+        <div class="content mb-5">
+          <hr>
+<div class="highlight"><pre tabindex="0" style="color:#1d2432;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#58a1dd">SLF4J:</span> <span style="color:#58a1dd">Class</span> <span style="color:#58a1dd">path</span> <span style="color:#58a1dd">contains</span> <span style="color:#58a1dd">multiple</span> <span style="color:#58a1dd">SLF4J</span> <span style="color:#58a1dd">bindings</span><span style="color:#ff636f">.</span>
+</span></span><span style="display:flex;"><span><span style="color:#58a1dd">SLF4J:</span> <span style="color:#58a1dd">Found</span> <span style="color:#58a1dd">binding</span> <span style="color:#58a1dd">in</span> <span style="color:#ff636f">[</span><span style="color:#58a1dd">jar</span><span style="color:#ff636f">:</span><span style="color:#58a1dd">file</span><span style="color:#ff636f">:/</span><span style="color:#58a1dd">C</span><span style="color:#ff636f">:/</span><span style="color:#58a1dd">Users</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">XXXXXX</span><span style="color:#ff636f">/.</span><span style="color:#58a1dd">m2</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">ch</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">qos</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">logback</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">logback</span><span style="color:#ff636f">-</span><span style="color:#58a1dd">classic</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">1</span><span style="color:#ff636f">.</span><span style="color:#58a1dd">2</span><span style="color:#ff636f">.</span><span style="color:#58a1dd">3</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">logback</span><span style="color:#ff636f">-</span><span style="color:#58a1dd">classic</span><span style="color:#ff636f">-</span><span style="color:#58a1dd">1</span><span style="color:#ff636f">.</span><span style="color:#58a1dd">2</span><span style="color:#ff636f">.</span><span style="color:#58a1dd">3</span><span style="color:#ff636f">.</span><span style="color:#58a1dd">jar</span><span style="color:#ff636f">!/</span><span style="color:#58a1dd">org</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">slf4j</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">impl</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">StaticLoggerBinder</span><span style="color:#ff636f">.</span><span style="color:#58a1dd">class</span><span style="color:#ff636f">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#58a1dd">SLF4J:</span> <span style="color:#58a1dd">Found</span> <span style="color:#58a1dd">binding</span> <span style="color:#58a1dd">in</span> <span style="color:#ff636f">[</span><span style="color:#58a1dd">jar</span><span style="color:#ff636f">:</span><span style="color:#58a1dd">file</span><span style="color:#ff636f">:/</span><span style="color:#58a1dd">C</span><span style="color:#ff636f">:/</span><span style="color:#58a1dd">Users</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">XXXXXX</span><span style="color:#ff636f">/.</span><span style="color:#58a1dd">m2</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">org</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">apache</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">logging</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">log4j</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">log4j</span><span style="color:#ff636f">-</span><span style="color:#58a1dd">slf4j</span><span style="color:#ff636f">-</span><span style="color:#58a1dd">impl</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">2</span><span style="color:#ff636f">.</span><span style="color:#58a1dd">13</span><span style="color:#ff636f">.</span><span style="color:#58a1dd">3</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">log4j</span><span style="color:#ff636f">-</span><span style="color:#58a1dd">slf4j</span><span style="color:#ff636f">-</span><span style="color:#58a1dd">impl</span><span style="color:#ff636f">-</span><span style="color:#58a1dd">2</span><span style="color:#ff636f">.</span><span style="color:#58a1dd">13</span><span style="color:#ff636f">.</span><span style="color:#58a1dd">3</span><span style="color:#ff636f">.</span><span style="color:#58a1dd">jar</span><span style="color:#ff636f">!/</span><span style="color:#58a1dd">org</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">slf4j</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">impl</span><span style="color:#ff636f">/</span><span style="color:#58a1dd">StaticLoggerBinder</span><span style="color:#ff636f">.</span><span style="color:#58a1dd">class</span><span style="color:#ff636f">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#58a1dd">SLF4J:</span> <span style="color:#58a1dd">See</span> <span style="color:#58a1dd">http</span><span style="color:#ff636f">:</span><span style="color:#828b96;font-style:italic">//www.slf4j.org/codes.html#multiple_bindings for an explanation.
+</span></span></span><span style="display:flex;"><span><span style="color:#828b96;font-style:italic"></span><span style="color:#58a1dd">SLF4J:</span> <span style="color:#58a1dd">Actual</span> <span style="color:#58a1dd">binding</span> <span style="color:#58a1dd">is</span> <span style="color:#58a1dd">of</span> <span style="color:#58a1dd">type</span> <span style="color:#ff636f">[</span><span style="color:#58a1dd">ch</span><span style="color:#ff636f">.</span><span style="color:#58a1dd">qos</span><span style="color:#ff636f">.</span><span style="color:#58a1dd">logback</span><span style="color:#ff636f">.</span><span style="color:#58a1dd">classic</span><span style="color:#ff636f">.</span><span style="color:#58a1dd">util</span><span style="color:#ff636f">.</span><span style="color:#58a1dd">ContextSelectorStaticBinder</span><span style="color:#ff636f">]</span>
+</span></span></code></pre></div><p>public static void main(String[] args) {
+System.out.println(&ldquo;Hello world!&rdquo;);
+}</p>
+<ul>
+<li>
+<p>問題原因在於專案引用了兩個日誌框架，例如上面訊息說找到兩個slf4j binding，分別為：</p>
+<ul>
+<li>logback-classic-1.2.3.jar</li>
+<li>log4j-slf4j-impl-2.11.2.jar。</li>
+</ul>
+</li>
+<li>
+<p>因為slf4j一次只能綁定一個日誌框架，若slf4j在專案的classpath找到兩個日誌框架就會出現以上警告訊息。不過slf4j仍會選擇其中一個來綁定，例如上面最終綁定logback。</p>
+</li>
+<li>
+<p>若要避免出現警告訊息，必須排除其中一個日誌框架依賴。</p>
+</li>
+</ul>
+<h3 id="設定以下即可排除">設定以下即可排除：</h3>
+<ol>
+<li>在Starter底下exclusion排除掉starter-logging</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#1d2432;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#58a1dd">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#58a1dd">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#58a1dd">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#58a1dd">&lt;artifactId&gt;</span>spring-boot-starter<span style="color:#58a1dd">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#58a1dd">&lt;exclusions&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#58a1dd">&lt;exclusion&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#58a1dd">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#58a1dd">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#58a1dd">&lt;artifactId&gt;</span>spring-boot-starter-logging<span style="color:#58a1dd">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#58a1dd">&lt;/exclusion&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#58a1dd">&lt;/exclusions&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#58a1dd">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><ol start="2">
+<li>加入Log4j2 dependency</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#1d2432;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#58a1dd">&lt;dependencies&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#58a1dd">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#58a1dd">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#58a1dd">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#58a1dd">&lt;artifactId&gt;</span>spring-boot-starter<span style="color:#58a1dd">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#58a1dd">&lt;exclusions&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#58a1dd">&lt;exclusion&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#58a1dd">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#58a1dd">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#58a1dd">&lt;artifactId&gt;</span>spring-boot-starter-logging<span style="color:#58a1dd">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#58a1dd">&lt;/exclusion&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#58a1dd">&lt;/exclusions&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#58a1dd">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#58a1dd">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#58a1dd">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#58a1dd">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#58a1dd">&lt;artifactId&gt;</span>spring-boot-starter-web<span style="color:#58a1dd">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#828b96;font-style:italic">&lt;!-- Maven專案中若有spring-boot-starter依賴且已排除了spring-boot-starter-logging，下面就不用設定了
+</span></span></span><span style="display:flex;"><span><span style="color:#828b96;font-style:italic">        &lt;exclusions&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#828b96;font-style:italic">            &lt;exclusion&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#828b96;font-style:italic">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#828b96;font-style:italic">                &lt;artifactId&gt;spring-boot-starter-logging&lt;/artifactId&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#828b96;font-style:italic">            &lt;/exclusion&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#828b96;font-style:italic">        &lt;/exclusions&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#828b96;font-style:italic">--&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#58a1dd">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#828b96;font-style:italic">&lt;!-- log4j2 --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#58a1dd">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#58a1dd">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#58a1dd">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#58a1dd">&lt;artifactId&gt;</span>spring-boot-starter-log4j2<span style="color:#58a1dd">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#58a1dd">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span><span style="color:#58a1dd">&lt;/dependencies&gt;</span>
+</span></span></code></pre></div><ul>
+<li>
+<h4 id="spring-boot預設的日誌輸出等級httpsmatthung0807blogspotcom201909spring-boot-default-log-levelhtml是info但若sprinb-boot改用了log4j2框架並添加了設定檔如log4j2properties即使在沒作任何設定的情況下logger預設等級會改為log4j2的預設等級error"><a href="https://matthung0807.blogspot.com/2019/09/spring-boot-default-log-level.html">Spring Boot預設的日誌輸出等級</a>是INFO。但若Sprinb Boot改用了log4j2框架並添加了設定檔如log4j2.properties，即使在沒作任何設定的情況下，Logger預設等級會改為log4j2的預設等級ERROR。</h4>
+</li>
+</ul>
+<ol start="3">
+<li>在src/main/resources下新增log4j2.properties並設定以下在console輸出日誌：</li>
+</ol>
+<h2 id="log4j2properites">log4j2.properites</h2>
+<div class="highlight"><pre tabindex="0" style="color:#1d2432;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#58a1dd">appender.console.type</span> <span style="color:#ff636f">=</span> <span style="color:#a6be9d">Console</span>
+</span></span><span style="display:flex;"><span><span style="color:#58a1dd">appender.console.name</span> <span style="color:#ff636f">=</span> <span style="color:#a6be9d">STDOUT</span>
+</span></span><span style="display:flex;"><span><span style="color:#58a1dd">appender.console.layout.type</span> <span style="color:#ff636f">=</span> <span style="color:#a6be9d">PatternLayout</span>
+</span></span><span style="display:flex;"><span><span style="color:#58a1dd">appender.console.layout.pattern</span> <span style="color:#ff636f">=</span> <span style="color:#a6be9d">%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#58a1dd">rootLogger.level</span> <span style="color:#ff636f">=</span> <span style="color:#a6be9d">INFO</span>
+</span></span><span style="display:flex;"><span><span style="color:#58a1dd">rootLogger.appenderRefs</span> <span style="color:#ff636f">=</span> <span style="color:#a6be9d">stdout</span>
+</span></span><span style="display:flex;"><span><span style="color:#58a1dd">rootLogger.appenderRef.stdout.ref</span> <span style="color:#ff636f">=</span> <span style="color:#a6be9d">STDOUT</span>
+</span></span></code></pre></div><h2 id="reference">Reference：</h2>
+<ul>
+<li><a href="https://matthung0807.blogspot.com/2019/09/spring-boot-slf4j-class-path-contains.html">Spring Boot SLF4J: Class path contains multiple SLF4J bindings.</a></li>
+<li><a href="https://matthung0807.blogspot.com/2019/09/spring-boot-log4j2-maven-gradle.html">Spring Boot Log4j2 Maven Gradle dependencies 設定</a></li>
+<li><a href="https://matthung0807.blogspot.com/2019/09/spring-boot-default-log-level.html">Spring Boot 預設的日誌級別 default log level</a></li>
+</ul>
+
+        </div>
+        
+        <script src="https://utteranc.es/client.js"
+            label="comment"
+            repo="ytaocrow/ytaoCrow.github.io"
+            issue-term="title"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+        </script>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  var indexURL = "https://ytaoCrow.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://ytaoCrow.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://ytaoCrow.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://ytaoCrow.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://ytaoCrow.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://ytaoCrow.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://ytaoCrow.github.io/plugins/search/mark.js"></script>
+
+<script src="https://ytaoCrow.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://ytaoCrow.github.io/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+</html>
