@@ -6,22 +6,22 @@
     <description>Recent content in Categories on 不想加班的工程師 JustinShen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 26 Aug 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://ytaoCrow.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Aug 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://ytaoCrow.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java</title>
+      <link>https://ytaoCrow.github.io/categories/java/</link>
+      <pubDate>Wed, 30 Aug 2023 00:00:00 +0800</pubDate>
+      
+      <guid>https://ytaoCrow.github.io/categories/java/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>SpringBoot</title>
       <link>https://ytaoCrow.github.io/categories/springboot/</link>
       <pubDate>Sat, 26 Aug 2023 00:00:00 +0800</pubDate>
       
       <guid>https://ytaoCrow.github.io/categories/springboot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>https://ytaoCrow.github.io/categories/java/</link>
-      <pubDate>Wed, 09 Aug 2023 00:00:00 +0800</pubDate>
-      
-      <guid>https://ytaoCrow.github.io/categories/java/</guid>
       <description></description>
     </item>
     

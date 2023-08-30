@@ -6,7 +6,16 @@
     <description>Recent content on 不想加班的工程師 JustinShen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 26 Aug 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://ytaoCrow.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Aug 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://ytaoCrow.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用compareTo運算子，達成各種日期檢核的奇怪需求 | Java</title>
+      <link>https://ytaoCrow.github.io/blog/%E5%A6%82%E4%BD%95%E9%80%8F%E9%81%8E%E9%81%8B%E7%AE%97%E5%AD%90/</link>
+      <pubDate>Wed, 30 Aug 2023 00:00:00 +0800</pubDate>
+      
+      <guid>https://ytaoCrow.github.io/blog/%E5%A6%82%E4%BD%95%E9%80%8F%E9%81%8E%E9%81%8B%E7%AE%97%E5%AD%90/</guid>
+      <description>今天的 Spring Card 要完成SA文件，例外處理檢核邏輯的開發，其中有個需求蠻有趣的：「若不符合 XX日減一年 ≦ XX日 ≦ XX日加一個月，出現錯誤訊息：「(錯誤代號)-已超過XX日可輸入範圍」」 這讓我苦惱了很久，大約兩三個小時去了～ 最後我想到個很土炮的方法，反正字串傳進來是yyyyMMdd，那我就轉成數字，也就是&amp;quot;20230819&amp;quot; -&amp;gt; 20230819 然後減10000 就會變成20220819 若加100月份就會是9月</description>
+    </item>
+    
     <item>
       <title>啟動Spring Boot專案時，出現錯誤SLF4J: Class path contains multiple SLF4J bindings.</title>
       <link>https://ytaoCrow.github.io/blog/%E5%95%9F%E5%8B%95spring-boot%E5%B0%88%E6%A1%88%E6%99%82/</link>
@@ -14,15 +23,6 @@
       
       <guid>https://ytaoCrow.github.io/blog/%E5%95%9F%E5%8B%95spring-boot%E5%B0%88%E6%A1%88%E6%99%82/</guid>
       <description>SLF4J: Class path contains multiple SLF4J bindings. SLF4J: Found binding in [jar:file:/C:/Users/XXXXXX/.</description>
-    </item>
-    
-    <item>
-      <title>我是測試文章</title>
-      <link>https://ytaoCrow.github.io/blog/tset/</link>
-      <pubDate>Wed, 09 Aug 2023 00:00:00 +0800</pubDate>
-      
-      <guid>https://ytaoCrow.github.io/blog/tset/</guid>
-      <description>Heading 1 </description>
     </item>
     
     <item>

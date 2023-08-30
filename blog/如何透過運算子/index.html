@@ -5,7 +5,7 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我只是測試文章">
+  <meta name="description" content="分享使用compareTo運算子，達成各種日期檢核的奇怪需求。今天的 Spring Card 要完成SA文件，例外處理檢核邏輯的開......">
   <meta name="author" content="JustinShen">
     
   
@@ -104,16 +104,104 @@
         <a href="/categories/java"
           class="text-primary">Java</a>
         
-        <h2>我是測試文章</h2>
+        <h2>使用compareTo運算子，達成各種日期檢核的奇怪需求 | Java</h2>
         <div class="mb-3 post-meta">
           <span>By JustinShen</span>
           
           <span class="border-bottom border-primary px-2 mx-1"></span>
-          <span>09 August 2023</span>
+          <span>30 August 2023</span>
           
         </div>
         <div class="content mb-5">
-          <h1 id="heading-1">Heading 1</h1>
+          <!-- raw HTML omitted -->
+<h6 id="今天的-spring-card-要完成sa文件例外處理檢核邏輯的開發其中有個需求蠻有趣的若不符合-xx日減一年--xx日--xx日加一個月出現錯誤訊息錯誤代號-已超過xx日可輸入範圍">今天的 Spring Card 要完成SA文件，例外處理檢核邏輯的開發，其中有個需求蠻有趣的：「若不符合 XX日減一年 ≦ XX日 ≦ XX日加一個月，出現錯誤訊息：「(錯誤代號)-已超過XX日可輸入範圍」」</h6>
+<hr>
+<!-- raw HTML omitted -->
+<h4 id="這讓我苦惱了很久大約兩三個小時去了">這讓我苦惱了很久，大約兩三個小時去了～</h4>
+<p>最後我想到個很土炮的方法，反正字串傳進來是yyyyMMdd，那我就轉成數字，也就是&quot;20230819&quot; -&gt; 20230819 然後減10000 就會變成20220819 若加100月份就會是9月</p>
+<ul>
+<li>20230819 - 10000 = 20220819</li>
+<li>20230819 + 100 = 20230919</li>
+</ul>
+<!-- raw HTML omitted -->
+<h4 id="完美">完美</h4>
+<!-- raw HTML omitted -->
+<h4 id="好啦今天可以準時下班啦-ya">好啦～今天可以準時下班啦 YA</h4>
+<pre tabindex="0"><code>if((Integer.parseInt(date) - 10000 &lt;= Integer.parseInt(date) || Integer.parseInt(date) &lt;= Integer.parseInt(date) + 100)){
+    /** 內容已被和諧 **/
+    throw Exception;
+}
+</code></pre><!-- raw HTML omitted -->
+<h4 id="厲害吧我根本是個天才">厲害吧！我根本是個天才</h4>
+<p><img src="../../images/post/head.jpeg" alt="image"></p>
+<!-- raw HTML omitted -->
+<h3 id="熱騰騰端去給學長看想當然而先被釘在天花板上啦qaq">熱騰騰端去給學長看，想當然而先被釘在天花板上啦qaq</h3>
+<blockquote>
+<p>「你這種作法在極端情況下，會出問題的。」</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<h5 id="學長人家錯惹再也不敢了嗚嗚嗚嗚嗚">學長，人家錯惹，再也不敢了嗚嗚嗚嗚嗚</h5>
+<p><img src="../../images/post/a.jpeg" alt="image"></p>
+<!-- raw HTML omitted -->
+<h6 id="想一想是沒錯啦不然12月變成13月也是蠻恐怖的xdddd">想一想是沒錯啦！不然12月變成13月也是蠻恐怖的XDDDD</h6>
+<h6 id="所以調整作法使用localdate這個物件來達成sa文件上的需求">所以調整作法，使用LocalDate這個物件，來達成SA文件上的需求</h6>
+<pre tabindex="0"><code class="language-java=" data-lang="java=">DateTimeFormatter dtf = DateTimeFormatter.ofPattern(&#34;yyyyMMdd&#34;)
+    
+LocalDate date = LocalDate.parse(getDate(), dtf);
+
+LocalDate localDate = LocalDate.now(ZoneId.of(&#34;Asia/Taipei&#34;)); //未來寫個Methods 依據國別判斷導入之時區
+
+LocalDate plusMonths = localDate.plusMonths(1);
+LocalDate minusYears = localDate.minusYears(1);
+if(minusYears.compareTo(date) &gt;= 0 || plusMonths.compareTo(date) &lt;= 0){
+    /** 內容已被和諧 **/
+    throw Exception;
+    }
+}
+</code></pre><ol>
+<li>我先用把字串的20230819轉型為LocalDate</li>
+<li>宣告個變數localDate取得指定時區的現在時間</li>
+<li>依SA文件需求，宣告plusMonths與minusYears變數，並使用plusMonths(), minusYears()這兩個Methods</li>
+<li>最後再善用 compareTo 比較 -1 0 1之間的運算子，如：&gt;, &lt;, =, &gt;=, &lt;=, !=，來達成檢核邏輯的判斷</li>
+</ol>
+<blockquote>
+<ol start="5">
+<li>請把設計好的錯誤代號與訊息，狠狠地砸到前端廠商身上:)</li>
+</ol>
+</blockquote>
+<p><img src="../../images/post/sound.jpeg" alt="image"></p>
+<!-- raw HTML omitted -->
+<h4 id="compareto-example">compareTo Example</h4>
+<pre tabindex="0"><code>public static void main(String[] args) {
+
+      // 建立兩個日期
+      Date date = new Date(108, 6, 11);
+      Date date1 = new Date(109, 3, 19);
+
+      // 宣告三個比較時間的變數
+      
+      //時間小compareTo時間大
+      int num1 = date.compareTo(date1);
+
+      //時間大compareTo時間小
+      int num2 = date1.compareTo(date);
+
+      //同個時間compareTo同個時間
+      int num3 = date.compareTo(date);
+
+      // 列印結果
+      System.out.println(&#34;Num is:&#34; + num1);
+      System.out.println(&#34;Num is:&#34; + num2);
+      System.out.println(&#34;Num is:&#34; + num3);
+
+   }
+}
+</code></pre><!-- raw HTML omitted -->
+<h6 id="列印結果">列印結果</h6>
+<pre tabindex="0"><code>Num is:-1
+Num is:1
+Num is:0
+</code></pre><h4 id="好啦以後就能用compareto去玩一堆檢核邏輯的花招啦今天就分享到這謝謝觀看">好啦以後就能用compareTo去玩一堆檢核邏輯的花招啦～今天就分享到這，謝謝觀看</h4>
 
         </div>
         
